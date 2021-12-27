@@ -3,7 +3,6 @@ import { OrderStatus } from "./interfaces/order-status";
 
 export class ShoppingCart {
   private readonly _items: CartItem[] = [];
-  private _orderStatus: OrderStatus = 'open';
 
   addItem(item: CartItem): void {
     this._items.push(item);
@@ -15,10 +14,6 @@ export class ShoppingCart {
 
   get items(): Readonly<CartItem[]> {
     return this._items;
-  }
-
-  get orderStatus(): OrderStatus {
-    return this._orderStatus;
   }
 
   total(): number {
