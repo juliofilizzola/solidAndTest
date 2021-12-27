@@ -3,7 +3,7 @@ import { Messaging } from "../services/messaging";
 import { Persistency } from "../services/persistency";
 import { ShoppingCart } from "./ShoppingCart";
 
-export class order {
+export class Order {
   private _orderStatus: OrderStatus = 'open';
 
   constructor(
@@ -21,6 +21,7 @@ export class order {
       console.log('Carrinho vazio...');
       return;
     }
+    this._orderStatus = 'closed';
     this.msg.sendMessage(`seu pedido com total de ${this.cart.total()} foi recebido`);
     
     this.saveOrder.saveOrder();
