@@ -1,5 +1,5 @@
 import { Product } from "./entities/products";
-import { Order } from "./entities/order";
+import { Order } from "./order";
 
 import { ShoppingCart } from "./entities/ShoppingCart";
 import { Messaging } from "../services/messaging";
