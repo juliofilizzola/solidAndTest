@@ -1,10 +1,14 @@
-import { Messaging } from "../services/messaging";
-import { Persistency } from "../services/persistency";
-import { Order } from "./order";
-import { Product } from "./products";
-import { ShoppingCart } from "./ShoppingCart";
+import { Messaging } from "./services/messaging";
+import { Persistency } from "./services/persistency";
+import { NoDiscount } from "./classes/discount";
+import { Order } from "./classes/order";
+import { Product } from "./classes/products";
+import { ShoppingCart } from "./classes/ShoppingCart";
 
-const shoppingCart = new ShoppingCart();
+
+const noDiscount = new NoDiscount()
+
+const shoppingCart = new ShoppingCart(noDiscount);
 const messaging = new Messaging();
 const persistency = new Persistency();
 
@@ -15,7 +19,7 @@ shoppingCart.addItem(new Product('Caderno', 9.9123));
 shoppingCart.addItem(new Product('Lápis', 1.59));
 
 console.log(shoppingCart.items);
-console.log(shoppingCart.totalWithDiscount(0.5));
+console.log(shoppingCart.totalWithDiscount());
 console.log(shoppingCart.total());
 console.log(order.orderStatus);
 order.checkout();

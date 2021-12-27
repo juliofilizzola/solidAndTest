@@ -22,7 +22,7 @@ export class Order {
       return;
     }
     this._orderStatus = 'closed';
-    this.msg.sendMessage(`seu pedido com total de ${this.cart.total()} foi recebido`);
+    this.msg.sendMessage(`seu pedido com total de ${this.cart.totalWithDiscount()} foi recebido`);
     
     this.saveOrder.saveOrder();
     this.cart.clear();
