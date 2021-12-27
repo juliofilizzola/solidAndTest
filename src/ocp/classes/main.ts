@@ -16,6 +16,7 @@ shoppingCart.addItem(new Product('Caderno', 9.9123));
 shoppingCart.addItem(new Product('Lápis', 1.59));
 
 console.log(shoppingCart.items);
+console.log(shoppingCart.totalWithDiscount());
 console.log(shoppingCart.total());
 console.log(order.orderStatus);
 order.checkout();
