@@ -20,24 +20,10 @@ export class ShoppingCart {
     return +this._items.reduce((total, next) => total + next.price, 0).toFixed(2);
   }
 
-  checkout(): void {
-    if (this.isEmpty()) {
-      console.log('Carrinho vazio...');
-      return;
-    }
-    this._orderStatus = 'closed';
-    this.saveOrder();
-    this.clear();
-  }
-
   isEmpty(): boolean{
     return this._items.length === 0;
   }
-
-  saveOrder(): void {
-    console.log('Pedido salvo com sucesso!');
-  }
-
+  
   clear() {
     this._items.length = 0;
   }
