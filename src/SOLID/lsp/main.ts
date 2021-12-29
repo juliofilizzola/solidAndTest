@@ -4,6 +4,7 @@ import { NoDiscount } from "./classes/discount";
 import { Order } from "./classes/order";
 import { Product } from "./classes/products";
 import { ShoppingCart } from "./classes/ShoppingCart";
+import { EnterpriseCustomer, IndividualCustomer } from "../srp/classes/entities/customer";
 
 
 const noDiscount = new NoDiscount()
@@ -11,8 +12,10 @@ const noDiscount = new NoDiscount()
 const shoppingCart = new ShoppingCart(noDiscount);
 const messaging = new Messaging();
 const persistency = new Persistency();
+const individualCustomer = new IndividualCustomer('Luiz', 'Antonio', '111.111.111-11');
+const enterpriseCustomer = new EnterpriseCustomer('xablau.lsa', '1255787248744-54'); 
 
-const order = new Order(shoppingCart, messaging, persistency);
+const order = new Order(shoppingCart, messaging, persistency, enterpriseCustomer);
 
 shoppingCart.addItem(new Product('Camiseta', 49.91));
 shoppingCart.addItem(new Product('Caderno', 9.9123));
