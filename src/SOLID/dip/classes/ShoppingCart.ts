@@ -1,9 +1,11 @@
+import { Discount } from "./discount";
 import { CartItem } from "./interfaces/cart-item";
-import { OrderStatus } from "./interfaces/order-status";
+import { IShoppingCart } from "./interfaces/Shopping-cart";
 
-export class ShoppingCart {
+export class ShoppingCart implements IShoppingCart {
   private readonly _items: CartItem[] = [];
-  private _orderStatus: OrderStatus = 'open';
+
+  constructor(private readonly discount: Discount) {}
 
   addItem(item: CartItem): void {
     this._items.push(item);
@@ -17,32 +19,18 @@ export class ShoppingCart {
     return this._items;
   }
 
-  get orderStatus(): OrderStatus {
-    return this._orderStatus;
-  }
-
   total(): number {
     return +this._items.reduce((total, next) => total + next.price, 0).toFixed(2);
   }
 
-  checkout(): void {
-    if (this.isEmpty()) {
-      console.log('Carrinho vazio...');
-      return;
-    }
-    this._orderStatus = 'closed';
-    this.saveOrder();
-    this.clear();
+  totalWithDiscount(): number {
+    return this.discount.calculate(this.total());
   }
 
   isEmpty(): boolean{
     return this._items.length === 0;
   }
-
-  saveOrder(): void {
-    console.log('Pedido salvo com sucesso!');
-  }
-
+  
   clear() {
     this._items.length = 0;
   }

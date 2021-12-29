@@ -1,5 +1,5 @@
-import { CartItem } from "../classes/interfaces/cart-item";
-import { OrderStatus } from "../classes/interfaces/order-status";
+import { CartItem } from "../srp/classes/interfaces/cart-item";
+import { OrderStatus } from "../srp/classes/interfaces/order-status";
 
 export class ShoppingCartLegacy {
   private readonly _items: CartItem[] = [];
