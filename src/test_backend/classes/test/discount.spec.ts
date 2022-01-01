@@ -11,4 +11,15 @@ describe('Discount test', () => {
     const sut = createSUT(NoDiscount);
     expect(sut.calculate(10.99)).toBeCloseTo(10.99);
   });
+
+
+  it('should have fifty perrcent discount', () => {
+    const sut = createSUT(FiftyPercentDiscount);
+    expect(sut.calculate(10)).toBeCloseTo(5);
+  });
+
+  it('should have ten perrcent discount', () => {
+    const sut = createSUT(TenPercentDiscount);
+    expect(sut.calculate(10)).toBeCloseTo(9);
+  });
 });
