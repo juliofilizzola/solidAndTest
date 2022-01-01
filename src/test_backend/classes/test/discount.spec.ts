@@ -1,9 +1,14 @@
-import { FiftyPercentDiscount } from '../discount';
+import { Discount, FiftyPercentDiscount, NoDiscount, TenPercentDiscount } from '../discount';
 
-const createSUT = () => {
-  return new FiftyPercentDiscount();
+const createSUT = (className: new () => Discount): Discount => {
+  return new className();
 }
 
-describe('test for Discount Fifty percent', () => {
+describe('Discount test', () => {
+  afterEach(() => jest.clearAllMocks());
 
+  it('should have no discount', () => {
+    const sut = createSUT(NoDiscount);
+    expect(sut.calculate(10.99)).toBeCloseTo(10.99);
+  });
 });
