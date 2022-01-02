@@ -16,8 +16,14 @@ describe('IndividualCustomer test', () => {
     expect(sut.lastName).toBe(Individual.lastName);
   });
 
-  it('test method Invidual customer', () => {
+  it('test method Invidual customer getName', () => {
     const sut = createSUT(Individual.firstName, Individual.lastName, Individual.cpf);
     expect(sut.getName()).toBe(`${Individual.firstName} ${Individual.lastName}`);
   });
+
+  it('test method Invidual customer getIDN', () => {
+    const sut = createSUT(Individual.firstName, Individual.lastName, Individual.cpf);
+    expect(sut.getIDN()).toBe(Individual.cpf);
+  });
+  
 });
