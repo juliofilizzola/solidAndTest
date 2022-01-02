@@ -1,4 +1,5 @@
 import { IndividualCustomer } from '../customer';
+import { Individual } from './mock/mockCustomer';
 
 const createSUT = (firstName: string, lastName: string, cpf: string): IndividualCustomer => {
   return new IndividualCustomer(firstName, lastName, cpf);
@@ -7,16 +8,16 @@ const createSUT = (firstName: string, lastName: string, cpf: string): Individual
 describe('IndividualCustomer test', () => {
   afterEach(() => jest.clearAllMocks());
 
-  it('verivy Individual custumer test', () => {
-    const sut = createSUT('Julio', 'Filizzola', "5548748724878");
-    console.log(sut);
+  it('verivy Individual customer test', () => {
+    const sut = createSUT(Individual.firstName, Individual.lastName, Individual.cpf);
 
-    expect(sut.cpf).toBe("5548748724878");
-    expect(sut.firstName).toBe('Julio');
-    expect(sut.lastName).toBe('Filizzola');
+    expect(sut.cpf).toBe(Individual.cpf);
+    expect(sut.firstName).toBe(Individual.firstName);
+    expect(sut.lastName).toBe(Individual.lastName);
   });
 
   it('test method Invidual customer', () => {
-    // const sut = createSUT()
+    const sut = createSUT(Individual.firstName, Individual.lastName, Individual.cpf);
+    expect(sut.getName()).toBe(`${Individual.firstName} ${Individual.lastName}`);
   });
 });
