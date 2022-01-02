@@ -1,5 +1,5 @@
 import { OrderStatus } from "./interfaces/order-status";
-import { CustomerOrder } from "./interfaces/costumer";
+import { CustomerOrder } from "./interfaces/customer";
 import { IShoppingCart } from "./interfaces/Shopping-cart";
 import { IMessaging } from "./interfaces/Messaging";
 import { IPersistency } from "./interfaces/persistency";

@@ -4,7 +4,7 @@ import { NoDiscount } from "./classes/discount";
 import { Order } from "./classes/order";
 import { Product } from "./classes/products";
 import { ShoppingCart } from "./classes/ShoppingCart";
-import { EnterpriseCustomer, IndividualCustomer } from "./classes/costumer";
+import { EnterpriseCustomer, IndividualCustomer } from "./classes/customer";
 
 
 const noDiscount = new NoDiscount()

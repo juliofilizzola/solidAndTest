@@ -2,7 +2,7 @@ import { OrderStatus } from "./interfaces/order-status";
 import { Messaging } from "../services/messaging";
 import { Persistency } from "../services/persistency";
 import { ShoppingCart } from "./ShoppingCart";
-import { CustomerOrder } from "./interfaces/costumer";
+import { CustomerOrder } from "./interfaces/custumer";
 
 export class Order {
   private _orderStatus: OrderStatus = 'open';

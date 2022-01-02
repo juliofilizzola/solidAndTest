@@ -1,4 +1,4 @@
-import { IndividualCustomer } from '../costumer';
+import { IndividualCustomer } from '../customer';
 
 const createSUT = (firstName: string, lastName: string, cpf: string): IndividualCustomer => {
   return new IndividualCustomer(firstName, lastName, cpf);
@@ -7,7 +7,7 @@ const createSUT = (firstName: string, lastName: string, cpf: string): Individual
 describe('IndividualCustomer test', () => {
   afterEach(() => jest.clearAllMocks());
 
-  it('verivy Individual costumer test', () => {
+  it('verivy Individual custumer test', () => {
     const sut = createSUT('Julio', 'Filizzola', "5548748724878");
     console.log(sut);
 
@@ -17,6 +17,6 @@ describe('IndividualCustomer test', () => {
   });
 
   it('test method Invidual customer', () => {
-    // const sut 
+    // const sut = createSUT()
   });
 });
