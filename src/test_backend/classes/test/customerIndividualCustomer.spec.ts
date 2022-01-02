@@ -12,5 +12,11 @@ describe('IndividualCustomer test', () => {
     console.log(sut);
 
     expect(sut.cpf).toBe("5548748724878");
+    expect(sut.firstName).toBe('Julio');
+    expect(sut.lastName).toBe('Filizzola');
+  });
+
+  it('test method Invidual customer', () => {
+    // const sut 
   });
 });
