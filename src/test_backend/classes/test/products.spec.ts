@@ -13,4 +13,4 @@ describe('Products test', () => {
     expect(sut).toHaveProperty('price', 40);
     expect(sut).not.toHaveProperty('name', 40);
   });
-})
+});
