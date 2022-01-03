@@ -1,29 +1,38 @@
+import { Discount } from '../discount';
 import { CartItem } from '../interfaces/cart-item';
 import { ShoppingCart } from '../ShoppingCart';
-import { DiscountMock, CartItemMock, productMock1, productMock2 } from './mock/mockShoppinCart';
+import { CartItemMock, productMock1, productMock2 } from './mock/mockShoppinCart';
 
-const createSUT = (): ShoppingCart => {
-  return new ShoppingCart(new DiscountMock());
+const createSUT = () => {
+  const discountMock = createDiscountMock();
+  const sut = new ShoppingCart(discountMock);
+  return { sut, discountMock }
 }
+
+const createDiscountMock = () => {
+  class DiscountMock extends Discount {}
+  return new DiscountMock();
+};
+
 
 const createItem = (name: string, price: number): CartItem => {
   return new CartItemMock(name, price);
 };
 
 const createdProductCart = () => {
-  const sut = createSUT();
+  const { sut, discountMock } = createSUT();
   const product1 = createItem(productMock1.name, productMock1.price);
   const product2 = createItem(productMock2.name, productMock2.price);
   sut.addItem(product1);
   sut.addItem(product2);
-  return { sut };
+  return { sut, discountMock };
 };
 
 describe('shopping cart test', () => {
   afterEach(() => jest.clearAllMocks());
 
   it('should be an empty cart when no products is added', () => {
-    const sut = createSUT();
+    const { sut } = createSUT();
     expect(sut.isEmpty()).toBe(true);
   });
 
@@ -54,9 +63,22 @@ describe('shopping cart test', () => {
     expect(sut.items.length).toBe(2);
 
     sut.removeItem(1);
-    
+
     expect(sut.items.length).toBe(1);
   });
 
+  it('should call discount.calculet(price) whe totalWhitDiscount is called', () => {
+    const { sut, discountMock } = createdProductCart();
+    const DiscountMockSpy = jest.spyOn(discountMock, 'calculate');
+    sut.totalWithDiscount();
+    expect(DiscountMockSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('should call discount.calculate with total price when totalWithDiscount is called', () => {
+    const { sut, discountMock } = createdProductCart();
+    const discountMockSpy = jest.spyOn(discountMock, 'calculate');
+    sut.totalWithDiscount();
+    expect(discountMockSpy).toHaveBeenCalledWith(sut.total());
+  });
 });
 
