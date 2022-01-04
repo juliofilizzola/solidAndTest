@@ -1,7 +1,9 @@
-# Test Jest Typescript 
+# Typescript
 
-Repo de estudos de test no Typescript usando Jest.
+Repo de estudos de Typescript.
 
-Além de test com o jest, o repo tem os principios de S.O.L.I.D incorporado no seu código. 
 
-Cada diretorio é um principio diferente, e ficara documentado aqui.
+*Diretório* | _Conteúdo_
+----|-----
+[SOLID](https://github.com/juliofilizzola/typescript_studies/tree/main/src/SOLID) | Princípios de SOLID.
+[TEST]() | Fazendo testes e solidificando conceitos do SOLID
