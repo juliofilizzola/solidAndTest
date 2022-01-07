@@ -2,7 +2,7 @@ import {
   CustomerOrder,
   EnterpriseCustomerProtocol,
   IndividualCustomerProtocol
-} from './interfaces/costumer';
+} from './interfaces/customer';
 
 export class IndividualCustomer implements IndividualCustomerProtocol, CustomerOrder {
   firstName: string;
@@ -25,7 +25,7 @@ export class IndividualCustomer implements IndividualCustomerProtocol, CustomerO
 
 }
 
-export class EnterpriseCustomer implements EnterpriseCustomer, CustomerOrder {
+export class EnterpriseCustomer implements EnterpriseCustomerProtocol, CustomerOrder {
   name: string;
   cnpj: string;
 
