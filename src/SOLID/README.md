@@ -1,11 +1,12 @@
 # Principios S.O.L.I.D
 
-Nesse diretório tem os princípios de solid fragmentados.
+Nesses diretórios tem os princípios de solid.
 
 Diretórios | Resumo
 ---||
-[Legacy](https://github.com/juliofilizzola/typescript_studies/tree/main/src/SOLID/legacy) | código legado
-[SRP](https://github.com/juliofilizzola/typescript_studies/tree/main/src/SOLID/SRP) |
-[OCP](https://github.com/juliofilizzola/typescript_studies/tree/main/src/SOLID/ocp)|
-[LSP](https://github.com/juliofilizzola/typescript_studies/tree/main/src/SOLID/lsp) |
-[DIP](https://github.com/juliofilizzola/typescript_studies/tree/main/src/SOLID/dip) | 
+[Legacy](https://github.com/juliofilizzola/typescript_studies/tree/main/src/SOLID/legacy) | Código legado
+[SRP](https://github.com/juliofilizzola/typescript_studies/tree/main/src/SOLID/SRP) | Princípio da responsabilidade única
+[OCP](https://github.com/juliofilizzola/typescript_studies/tree/main/src/SOLID/ocp)| Princípio Aberto-Fechado
+[LSP](https://github.com/juliofilizzola/typescript_studies/tree/main/src/SOLID/lsp) |Princípio da substituição de Liskov
+[ISP](https://github.com/juliofilizzola/typescript_studies/tree/main/src/SOLID/isp) | Princípio da segregação de Interface
+[DIP](https://github.com/juliofilizzola/typescript_studies/tree/main/src/SOLID/dip) | Princípio da inversão da dependência
