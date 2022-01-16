@@ -1,6 +1,6 @@
 # Single Responsibility Principle
 
-Ela diz que: `Uaa claassa deve ter um, e apenas um, motivo para ser modificada.`
+Ela diz que: `Uma classe deve ter um, e apenas um, motivo para ser modificada.`
 
 Segue um artigo do Eduardo Pires explicando melhor esse conceito.
 
